@@ -3,65 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jeet Creation – App Portfolio</title>
+  <title>Jeet Creation – Android Apps</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
       margin: 0;
-      padding: 0;
+      background-color: #f4f6f8;
+      color: #2b2b2b;
     }
+
     header {
-      background-color: #075e54;
-      color: white;
+      background-color: #1f2937;
+      color: #ffffff;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
     }
-    h1 {
+
+    header h1 {
+      font-size: 32px;
       margin-bottom: 10px;
     }
+
+    header p {
+      font-size: 16px;
+      color: #d1d5db;
+    }
+
     .container {
       max-width: 960px;
       margin: 0 auto;
       padding: 20px;
     }
+
     .app-card {
-      background-color: white;
+      background-color: #ffffff;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
       padding: 20px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      gap: 20px;
     }
+
     .app-card img {
       width: 72px;
       height: 72px;
-      margin-right: 20px;
       border-radius: 16px;
     }
+
+    .app-details {
+      flex: 1;
+    }
+
     .app-details h2 {
-      margin: 0 0 8px;
+      margin: 0;
+      font-size: 22px;
+      color: #1f2937;
     }
+
     .app-details p {
-      margin: 0 0 12px;
+      font-size: 15px;
+      margin: 8px 0 16px;
+      color: #4b5563;
     }
-    .app-details a {
+
+    .app-links a {
       text-decoration: none;
+      background-color: #2563eb;
       color: white;
-      background-color: #25d366;
       padding: 8px 16px;
       border-radius: 6px;
+      font-size: 14px;
+      margin-right: 10px;
     }
+
+    .policy-links a {
+      display: inline-block;
+      margin-right: 12px;
+      font-size: 14px;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .policy-links {
+      margin-top: 10px;
+    }
+
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 60px;
       padding: 20px;
-      background-color: #ededed;
+      background-color: #f3f4f6;
+      font-size: 14px;
+      color: #6b7280;
     }
+
     footer a {
-      color: #075e54;
-      margin: 0 10px;
+      color: #1f2937;
       text-decoration: none;
     }
   </style>
@@ -70,39 +109,47 @@
 
   <header>
     <h1>Jeet Creation</h1>
-    <p>High-quality utility apps to enhance your daily life</p>
+    <p>Simple, Smart & Useful Android Apps</p>
   </header>
 
   <div class="container">
 
     <!-- App 1: Save Status Pro -->
     <div class="app-card">
-      <img src="https://play-lh.googleusercontent.com/YOUR-SAVE-STATUS-ICON" alt="Save Status Pro" />
+      <img src="https://play-lh.googleusercontent.com/YOUR-SAVE-STATUS-ICON" alt="Save Status Pro">
       <div class="app-details">
         <h2>Save Status Pro</h2>
-        <p>Download & save WhatsApp & Business statuses with ease. Includes dark mode, video preview & premium options.</p>
-        <a href="https://play.google.com/store/apps/details?id=jeet.creation.savestatuspro" target="_blank">View on Play Store</a>
+        <p>Download and manage WhatsApp & WhatsApp Business statuses easily. Supports photos, videos, dark mode, and more.</p>
+        <div class="app-links">
+          <a href="https://play.google.com/store/apps/details?id=jeet.creation.savestatuspro" target="_blank">View on Play Store</a>
+        </div>
+        <div class="policy-links">
+          <a href="privacy-status.html" target="_blank">Privacy Policy</a>
+          <a href="terms-status.html" target="_blank">Terms of Use</a>
+        </div>
       </div>
     </div>
 
-    <!-- App 2: Meditation and Sleep Music -->
+    <!-- App 2: Meditation & Sleep Music -->
     <div class="app-card">
-      <img src="https://play-lh.googleusercontent.com/YOUR-MEDITATION-ICON" alt="Meditation and Sleep Music" />
+      <img src="https://play-lh.googleusercontent.com/YOUR-MEDITATION-ICON" alt="Meditation and Sleep Music">
       <div class="app-details">
-        <h2>Meditation and Sleep Music</h2>
-        <p>Relax with calming rain, forest, and ocean sounds. Offline mode, timer, background play, and sleep music.</p>
-        <a href="https://play.google.com/store/apps/details?id=jeet.creation.sleepmusicapp" target="_blank">View on Play Store</a>
+        <h2>Meditation & Sleep Music</h2>
+        <p>Relax with calming rain, forest, wind and ocean sounds. Offline playback, timer, background mode, and more.</p>
+        <div class="app-links">
+          <a href="https://play.google.com/store/apps/details?id=jeet.creation.sleepmusicapp" target="_blank">View on Play Store</a>
+        </div>
+        <div class="policy-links">
+          <a href="privacy-meditation.html" target="_blank">Privacy Policy</a>
+          <a href="terms-meditation.html" target="_blank">Terms of Use</a>
+        </div>
       </div>
     </div>
 
   </div>
 
   <footer>
-    <p>
-      <a href="privacy-policy.html">Privacy Policy</a> |
-      <a href="terms-of-use.html">Terms of Use</a> |
-      <a href="mailto:jeet.creation.apps@gmail.com">Contact Us</a>
-    </p>
+    <p>Contact us: <a href="mailto:jeetcreation03@gmail.com">jeetcreation03@gmail.com</a></p>
     <p>© 2025 Jeet Creation</p>
   </footer>
 
