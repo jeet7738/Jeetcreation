@@ -42,6 +42,7 @@
       margin-bottom: 30px;
       padding: 20px;
       display: flex;
+      flex-direction: row;
       align-items: flex-start;
       gap: 20px;
     }
@@ -50,6 +51,7 @@
       width: 72px;
       height: 72px;
       border-radius: 16px;
+      flex-shrink: 0;
     }
 
     .app-details {
@@ -72,10 +74,11 @@
       text-decoration: none;
       background-color: #2563eb;
       color: white;
-      padding: 8px 16px;
+      padding: 10px 16px;
       border-radius: 6px;
       font-size: 14px;
       margin-right: 10px;
+      display: inline-block;
     }
 
     .policy-links a {
@@ -84,9 +87,6 @@
       font-size: 14px;
       color: #2563eb;
       text-decoration: none;
-    }
-
-    .policy-links {
       margin-top: 10px;
     }
 
@@ -103,6 +103,27 @@
       color: #1f2937;
       text-decoration: none;
     }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 600px) {
+      .app-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .app-card img {
+        margin-bottom: 16px;
+        width: 96px;
+        height: 96px;
+      }
+
+      .app-links a, .policy-links a {
+        display: block;
+        margin: 6px auto;
+        width: fit-content;
+      }
+    }
   </style>
 </head>
 <body>
@@ -117,10 +138,9 @@
     <!-- App 1: Save Status Pro -->
     <div class="app-card">
       <img src="https://play-lh.googleusercontent.com/sOgsdQWOBX-nOZtNQK2SwLQuA_UK1eMxZJJGGXbciLMHqfL0zSRhHtv3aPiAcQ9Ba9E=w240-h480" alt="Save Status Pro">
-
       <div class="app-details">
         <h2>Save Status Pro</h2>
-        <p>Download and manage WhatsApp & WhatsApp Business statuses easily. Supports photos, videos, dark mode, and more.</p>
+        <p>Download and manage social media statuses easily. Supports photos, videos and more.</p>
         <div class="app-links">
           <a href="https://play.google.com/store/apps/details?id=jeet.creation.savestatuspro" target="_blank">View on Play Store</a>
         </div>
@@ -133,12 +153,7 @@
 
     <!-- App 2: Meditation & Sleep Music -->
     <div class="app-card">
-      <!-- Save Status Pro -->
-<img src="https://play-lh.googleusercontent.com/sOgsdQWOBX-nOZtNQK2SwLQuA_UK1eMxZJJGGXbciLMHqfL0zSRhHtv3aPiAcQ9Ba9E=w240-h480" alt="Save Status Pro">
-
-<!-- Meditation & Sleep Music -->
-<img src="https://play-lh.googleusercontent.com/xshg8bGr_Oz_KGItFRfYRHROn_bAYzm1WZylu2DJEnGVKNBXQhwPo1FV6MJXIXQaMg=w240-h480" alt="Meditation and Sleep Music">
-
+      <img src="https://play-lh.googleusercontent.com/xshg8bGr_Oz_KGItFRfYRHROn_bAYzm1WZylu2DJEnGVKNBXQhwPo1FV6MJXIXQaMg=w240-h480" alt="Meditation and Sleep Music">
       <div class="app-details">
         <h2>Meditation & Sleep Music</h2>
         <p>Relax with calming rain, forest, wind and ocean sounds. Offline playback, timer, background mode, and more.</p>
