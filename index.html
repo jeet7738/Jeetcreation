@@ -5,18 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jeet Creation – Android Apps</title>
   <style>
+    :root {
+      --bg: #f4f6f8;
+      --text: #2b2b2b;
+      --card: #ffffff;
+      --muted: #4b5563;
+      --header: #1f2937;
+      --accent: #2563eb;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --text: #f9fafb;
+      --card: #1e293b;
+      --muted: #94a3b8;
+      --header: #0f172a;
+      --accent: #3b82f6;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-color: #f4f6f8;
-      color: #2b2b2b;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
     }
 
     header {
-      background-color: #1f2937;
+      background-color: var(--header);
       color: #ffffff;
       padding: 40px 20px;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
@@ -29,6 +49,19 @@
       color: #d1d5db;
     }
 
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
     .container {
       max-width: 960px;
       margin: 0 auto;
@@ -36,7 +69,7 @@
     }
 
     .app-card {
-      background-color: #ffffff;
+      background-color: var(--card);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       margin-bottom: 30px;
@@ -45,6 +78,9 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.7s forwards;
     }
 
     .app-card img {
@@ -61,18 +97,18 @@
     .app-details h2 {
       margin: 0;
       font-size: 22px;
-      color: #1f2937;
+      color: var(--text);
     }
 
     .app-details p {
       font-size: 15px;
       margin: 8px 0 16px;
-      color: #4b5563;
+      color: var(--muted);
     }
 
     .app-links a {
       text-decoration: none;
-      background-color: #2563eb;
+      background-color: var(--accent);
       color: white;
       padding: 10px 16px;
       border-radius: 6px;
@@ -85,7 +121,7 @@
       display: inline-block;
       margin-right: 12px;
       font-size: 14px;
-      color: #2563eb;
+      color: var(--accent);
       text-decoration: none;
       margin-top: 10px;
     }
@@ -94,14 +130,21 @@
       text-align: center;
       margin-top: 60px;
       padding: 20px;
-      background-color: #f3f4f6;
+      background-color: var(--card);
       font-size: 14px;
-      color: #6b7280;
+      color: var(--muted);
     }
 
     footer a {
-      color: #1f2937;
+      color: var(--text);
       text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* MOBILE RESPONSIVE */
@@ -118,10 +161,16 @@
         height: 96px;
       }
 
-      .app-links a, .policy-links a {
+      .app-links a,
+      .policy-links a {
         display: block;
         margin: 6px auto;
         width: fit-content;
+      }
+
+      .theme-toggle {
+        top: 10px;
+        right: 10px;
       }
     }
   </style>
@@ -129,6 +178,7 @@
 <body>
 
   <header>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
     <h1>Jeet Creation</h1>
     <p>Simple, Smart & Useful Android Apps</p>
   </header>
@@ -140,7 +190,7 @@
       <img src="https://i.postimg.cc/tTKgXSSr/Logo-Save-Status-Pro.png" alt="Save Status Pro">
       <div class="app-details">
         <h2>Save Status Pro</h2>
-        <p>Download and manage WhatsApp & WhatsApp Business statuses easily. Supports photos, videos, dark mode, and more.</p>
+        <p>Download and manage social media statuses easily. Supports photos, videos, dark mode, and more.</p>
         <div class="app-links">
           <a href="https://play.google.com/store/apps/details?id=jeet.creation.savestatuspro" target="_blank">View on Play Store</a>
         </div>
@@ -173,6 +223,21 @@
     <p>Contact us: <a href="mailto:jeetcreation03@gmail.com">jeetcreation03@gmail.com</a></p>
     <p>© 2025 Jeet Creation</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      const newTheme = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  </script>
 
 </body>
 </html>
